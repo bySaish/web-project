@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SaishMart | Fresh Groceries, Better Life</title>
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,Helvetica,sans-serif;
+}
+:root{--green:#064e3b;--dark:#073b2d;--lime:#a3e635;--light:#f5faf6;--text:#10231c;--muted:#66756e}
+body{
+  background:var(--light);color:var(--text);line-height:1.5}
+a{
+  text-decoration:none;color:inherit}
+.topbar{background:var(--green);color:white;text-align:center;padding:10px;font-size:13px;letter-spacing:.2px}
+header{background:white;padding:22px 7%;display:flex;align-items:center;gap:35px;justify-content:space-between;box-shadow:0 2px 12px #00000008}
+.logo{font-size:30px;font-weight:800;color:var(--green);white-space:nowrap}.logo span{color:#65a30d}.tagline{font-size:11px;color:var(--muted);letter-spacing:1px}
+.search{flex:1;max-width:530px;display:flex;border:1px solid #dce6df;border-radius:9px;overflow:hidden;background:#fafdfb}.search input{width:100%;padding:14px;border:0;outline:0;background:transparent;font-size:14px}.search button{width:58px;border:0;background:var(--green);color:white;font-size:20px;cursor:pointer}
+.header-links{display:flex;gap:20px;font-size:14px;font-weight:bold}.header-links a:hover{color:#65a30d}
+nav{background:white;border-top:1px solid #edf2ee;border-bottom:1px solid #e4ebe5;padding:0 7%;display:flex;align-items:center;gap:30px}nav a{padding:16px 0;font-size:14px;font-weight:bold}nav a:hover{color:#65a30d}.category-btn{background:var(--green);color:white;padding:14px 22px!important;border-radius:7px;margin:8px 0}
+.hero{margin:25px 7%;min-height:390px;border-radius:20px;overflow:hidden;background:linear-gradient(90deg,#e9f6e8 0%,#e9f6e8cc 44%,#e9f6e800 75%),url('images/grocery-banner.jpg') center/cover;display:flex;align-items:center;padding:55px}
+.hero-content{max-width:510px}.eyebrow{color:#4d7c0f;font-weight:bold;letter-spacing:2px;font-size:13px}.hero h1{font-size:clamp(36px,5vw,62px);line-height:1.05;color:var(--green);margin:15px 0}.hero p{font-size:17px;color:#41564b;margin-bottom:25px}.btn{display:inline-block;background:var(--green);color:white;padding:14px 25px;border-radius:7px;font-weight:bold;border:0;cursor:pointer}.btn:hover{background:#0b7054}.btn.light{background:white;color:var(--green);border:1px solid var(--green)}
+.section{padding:30px 7%}.section-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}.section-head h2{font-size:28px;color:var(--green)}.section-head a{color:#4d7c0f;font-weight:bold;font-size:14px}
+.categories{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}.category{background:white;border:1px solid #e6eee7;border-radius:14px;padding:20px 10px;text-align:center;transition:.2s}.category:hover{transform:translateY(-4px);box-shadow:0 8px 20px #064e3b12}.category img{width:100px;height:85px;object-fit:contain;margin-bottom:10px}.category h3{font-size:14px;color:var(--green)}.category p{font-size:12px;color:var(--muted)}
+.features{margin:20px 7%;background:#e8f4e9;border-radius:15px;padding:22px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.feature{display:flex;gap:12px;align-items:center}.feature .icon{font-size:28px}.feature h3{font-size:14px;color:var(--green)}.feature p{font-size:12px;color:var(--muted)}
+.deals{background:var(--green);padding:38px 7%;margin-top:25px}.deals .section-head h2,.deals .section-head a{color:white}.products{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.product{background:white;border-radius:13px;padding:15px;position:relative;box-shadow:0 5px 15px #0000000b}.discount{position:absolute;top:12px;left:12px;background:#dcfce7;color:#166534;padding:5px 8px;border-radius:5px;font-size:11px;font-weight:bold}.heart{position:absolute;right:13px;top:12px;font-size:20px;color:#7b8b82}.product img{width:100%;height:180px;object-fit:contain;margin:10px 0}.product h3{font-size:15px;color:var(--green);margin-bottom:5px}.weight{font-size:12px;color:var(--muted)}.price{font-size:20px;font-weight:bold;color:var(--green);margin:10px 0}.old{font-size:12px;color:#9ca3af;text-decoration:line-through;margin-left:5px}.cart-btn{width:100%;padding:11px;border:0;border-radius:7px;background:#dcfce7;color:#166534;font-weight:bold;cursor:pointer}.cart-btn:hover{background:var(--lime)}
+.newsletter{margin:35px 7%;background:#dff2df;border-radius:18px;padding:35px;text-align:center}.newsletter h2{color:var(--green);font-size:28px}.newsletter p{color:var(--muted);margin:8px 0 20px}.newsletter form{display:flex;max-width:480px;margin:auto;gap:8px}.newsletter input{flex:1;padding:13px;border:1px solid #cbdccf;border-radius:7px;outline:0}
+footer{background:#052e24;color:white;padding:40px 7% 20px;margin-top:30px}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:35px}.footer-logo{font-size:28px;font-weight:bold;margin-bottom:12px}.footer-logo span{color:var(--lime)}footer p,footer a{color:#c4d8cd;font-size:13px}footer h3{margin-bottom:15px;font-size:15px}footer a{display:block;margin:8px 0}footer a:hover{color:var(--lime)}.copyright{text-align:center;border-top:1px solid #315347;margin-top:30px;padding-top:18px;font-size:12px;color:#b5c9bf}
+@media(max-width:1000px){header{gap:18px;padding:20px 4%}nav{padding:0 4%;gap:18px}.hero,.section,.deals{margin-left:4%;margin-right:4%;padding-left:35px;padding-right:35px}.categories{grid-template-columns:repeat(3,1fr)}.products{grid-template-columns:repeat(2,1fr)}.features{margin-left:4%;margin-right:4%;grid-template-columns:repeat(2,1fr)}.newsletter{margin-left:4%;margin-right:4%}.footer-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:650px){.topbar{font-size:11px}header{flex-wrap:wrap;padding:18px 5%}.logo{font-size:25px}.search{order:3;flex-basis:100%;max-width:none}.header-links{font-size:12px;gap:10px}nav{overflow-x:auto;white-space:nowrap;padding:0 5%;gap:22px}.hero{margin:18px 5%;padding:30px 24px;min-height:430px;background:linear-gradient(90deg,#e9f6e8ee,#e9f6e8aa),url('images/grocery-banner.jpg') center/cover}.hero h1{font-size:40px}.hero p{font-size:14px}.section,.deals{margin-left:0;margin-right:0;padding:25px 5%}.section-head h2{font-size:23px}.categories{grid-template-columns:repeat(2,1fr);gap:12px}.category img{width:80px;height:70px}.features{margin:15px 5%;grid-template-columns:1fr;padding:18px}.products{grid-template-columns:repeat(2,1fr);gap:12px}.product{padding:10px}.product img{height:125px}.product h3{font-size:13px}.price{font-size:17px}.newsletter{margin:25px 5%;padding:25px 15px}.newsletter form{flex-direction:column}.footer-grid{grid-template-columns:1fr}footer{padding:35px 5%}}
+</style>
+<!--
+IMAGE SOURCES — download each image and save it in the images folder using the exact filenames below.
+1. grocery-banner.jpg: https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1600&q=85
+2. fresh-produce.jpg: https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&w=300&q=80
+3. dairy-eggs.jpg: https://images.unsplash.com/photo-1628088062854-d1870b4553da?auto=format&fit=crop&w=300&q=80
+4. pantry-staples.jpg: https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=300&q=80
+5. snacks.jpg: https://images.unsplash.com/photo-1621939514649-280e2aa55345?auto=format&fit=crop&w=300&q=80
+6. personal-care.jpg: https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=300&q=80
+7. household.jpg: https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=300&q=80
+8. apples.jpg: https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?auto=format&fit=crop&w=500&q=80
+9. bananas.jpg: https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=500&q=80
+10. milk.jpg: https://images.unsplash.com/photo-1563636619-e9143da7973b?auto=format&fit=crop&w=500&q=80
+11. bread.jpg: https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=500&q=80
+-->
+</head>
+<body>
+<div class="topbar">🚚 Free delivery on orders above ₹499 &nbsp; | &nbsp; Freshness guaranteed &nbsp; | &nbsp; Shop smart, live healthy</div>
+<header>
+  <div><div class="logo">Saish<span>Mart</span></div><div class="tagline">FRESH GROCERIES • BETTER LIFE</div></div>
+  <div class="search"><input type="text" placeholder="Search for products, brands and more..."><button>⌕</button></div>
+  <div class="header-links"><a href="#">♙ Account</a><a href="#">🛒 Cart</a></div>
+</header>
+<nav>
+  <a href="#" class="category-btn">☰ &nbsp; All Categories</a>
+  <a href="#">Home</a><a href="#categories">Fresh Produce</a><a href="#categories">Dairy & Eggs</a><a href="#deals">Pantry</a><a href="#deals">Snacks</a><a href="#deals">Household</a><a href="#deals">Offers</a>
+</nav>
+<section class="hero">
+  <div class="hero-content"><div class="eyebrow">WELCOME TO SAISHMART</div><h1>Fresh groceries delivered to your door.</h1><p>Premium quality, everyday essentials, and unbeatable prices—all in one place.</p><a href="#deals" class="btn">Shop Now →</a></div>
+</section>
+<section class="section" id="categories">
+  <div class="section-head"><h2>Shop by Category</h2><a href="#">View all categories →</a></div>
+  <div class="categories">
+    <a class="category" href="#deals"><img src="images/fresh-produce.jpg" alt="Fresh fruits"><h3>Fresh Produce</h3><p>Fruits & Vegetables</p></a>
+    <a class="category" href="#deals"><img src="images/dairy-eggs.jpg" alt="Milk and dairy"><h3>Dairy & Eggs</h3><p>Milk, Cheese & Eggs</p></a>
+    <a class="category" href="#deals"><img src="images/pantry-staples.jpg" alt="Rice and grains"><h3>Pantry Staples</h3><p>Rice, Flour & Grains</p></a>
+    <a class="category" href="#deals"><img src="images/snacks.jpg" alt="Snacks"><h3>Snacks</h3><p>Chips & Treats</p></a>
+    <a class="category" href="#deals"><img src="images/personal-care.jpg" alt="Personal care"><h3>Personal Care</h3><p>Health & Beauty</p></a>
+    <a class="category" href="#deals"><img src="images/household.jpg" alt="Cleaning products"><h3>Household</h3><p>Cleaning Essentials</p></a>
+  </div>
+</section>
+<div class="features">
+  <div class="feature"><div class="icon">🌿</div><div><h3>100% Fresh Products</h3><p>Quality you can trust</p></div></div>
+  <div class="feature"><div class="icon">🚚</div><div><h3>Fast Delivery</h3><p>At your doorstep</p></div></div>
+  <div class="feature"><div class="icon">🔒</div><div><h3>Secure Payments</h3><p>Safe & reliable checkout</p></div></div>
+  <div class="feature"><div class="icon">🎧</div><div><h3>Customer Support</h3><p>We're here to help</p></div></div>
+</div>
+<section class="deals" id="deals">
+  <div class="section-head"><h2>🔥 Best Deals This Week</h2><a href="#">View all deals →</a></div>
+  <div class="products">
+    <article class="product"><span class="discount">25% OFF</span><span class="heart">♡</span><img src="images/apples.jpg" alt="Red apples"><h3>Fresh Red Apples</h3><div class="weight">1 kg</div><div class="price">₹129 <span class="old">₹170</span></div><button class="cart-btn">🛒 Add to Cart</button></article>
+    <article class="product"><span class="discount">20% OFF</span><span class="heart">♡</span><img src="images/bananas.jpg" alt="Bananas"><h3>Fresh Bananas</h3><div class="weight">1 dozen</div><div class="price">₹49 <span class="old">₹60</span></div><button class="cart-btn">🛒 Add to Cart</button></article>
+    <article class="product"><span class="discount">15% OFF</span><span class="heart">♡</span><img src="images/milk.jpg" alt="Milk bottle"><h3>Fresh Dairy Milk</h3><div class="weight">1 litre</div><div class="price">₹52 <span class="old">₹61</span></div><button class="cart-btn">🛒 Add to Cart</button></article>
+    <article class="product"><span class="discount">18% OFF</span><span class="heart">♡</span><img src="images/bread.jpg" alt="Whole wheat bread"><h3>Whole Wheat Bread</h3><div class="weight">400 g</div><div class="price">₹45 <span class="old">₹55</span></div><button class="cart-btn">🛒 Add to Cart</button></article>
+  </div>
+</section>
+<section class="newsletter"><h2>Get fresh deals in your inbox</h2><p>Subscribe for special offers, new arrivals, and grocery tips.</p><form><input type="email" placeholder="Enter your email address"><button class="btn" type="submit">Subscribe</button></form></section>
+<footer><div class="footer-grid"><div><div class="footer-logo">Saish<span>Mart</span></div><p>Your trusted destination for fresh groceries, daily essentials, and a better shopping experience.</p></div><div><h3>Quick Links</h3><a href="#">Home</a><a href="#categories">Categories</a><a href="#deals">Offers</a><a href="#">About Us</a></div><div><h3>Customer Care</h3><a href="#">Contact Us</a><a href="#">Delivery Information</a><a href="#">Returns & Refunds</a><a href="#">FAQs</a></div><div><h3>Contact</h3><p>📍 Bengaluru, India</p><p>☎ +91 98765 43210</p><p>✉ hello@saishmart.com</p></div></div><div class="copyright">© 2026 SaishMart. All rights reserved.</div></footer>
+</body>
+</html>
